@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Testing - Dodgy</title>
+
+  <!-- Scripts -->
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script src="../required/Build/Cesium/Cesium.js"></script>
+  <script src="../required/dist/aframe-aterrain-component.js"></script>
+  <script src="https://fernandojsg.github.io/aframe-camera-transform-controls-component/dist/aframe-camera-transform-controls-component.min.js"></script>
+
+  <!-- Dodgy CSS-->
+  <style>
+      body { background-image: linear-gradient(#2980B9, #6DD5FA, #FFFFFF); overflow:hidden;}
+  </style>
+</head>
+
+<body>
+  <a-scene camera-transform-controls cursor="rayOrigin: mouse">
+
+    <!-- Fetch Terrain Stuff -->
+    <a-entity a-terrain="fovpad:4;
+                        latitude: -27.4582505;
+                        longitude: 153.032591;
+                        elevation: 500;
+                        lod: 14;
+                        radius: 75000;
+                        world_radius: 13727982;
+                        stretch: 3;
+                      ">
+    </a-entity>
+  
+    <!--- Setup Camera and Controls-->
+    <a-entity id="cameraRig" position="0 0 0">
+        <a-entity id="camera" camera wasd-controls="fly:true" look-controls orbit-controls></a-entity>
+        <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left"></a-entity>
+        <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right" oculus-touch-controls="hand: right" windows-motion-controls="hand: right"></a-entity>
+    </a-entity>
+  
+    <!--- Lighting -->
+    <a-light type="directional" color="#ffffff" intensity="1" position="-1 1 1"></a-light>
+    <a-light type="ambient" color="#444444"></a-light>
+    <a-light type="point" intensity="1" position="2 4 4"></a-light>  
+  </a-scene>
+</body>
+</html>
