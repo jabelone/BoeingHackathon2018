@@ -9,6 +9,7 @@
   <script src="/static/required/Build/Cesium/Cesium.js"></script>
   <script src="/static/required/dist/aframe-aterrain-component.js"></script>
   <script src="https://fernandojsg.github.io/aframe-camera-transform-controls-component/dist/aframe-camera-transform-controls-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
   <!-- Dodgy CSS-->
   <style>
       body { background-image: linear-gradient(#2980B9, #6DD5FA, #FFFFFF); overflow:hidden;}
@@ -71,6 +72,8 @@
         </a-entity>
         <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right" oculus-touch-controls="hand: right" windows-motion-controls="hand: right"></a-entity>
     </a-entity>
+
+    <a-entity id="teleHand" hand-controls="left" teleport-controls></a-entity>
   
     <!--- Lighting -->
     <a-light type="directional" color="#ffffff" intensity="1" position="-1 1 1"></a-light>
