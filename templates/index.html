@@ -78,7 +78,8 @@
             </a-entity>
         </a-entity>
         <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right"
-                  oculus-touch-controls="hand: right" windows-motion-controls="hand: right">
+                  oculus-touch-controls="hand: right" windows-motion-controls="hand: right"
+                  teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera; button: trigger; curveShootingSpeed: 60; curveNumberPoints: 500">
             <a-entity rotation="-90 0 0">
                 <a-entity id="altitude" position="0 0.15 0" geometry="primitive: plane; width: 0.35; height: 0.05"
                           material="opacity: 0.6; color: #000000"
