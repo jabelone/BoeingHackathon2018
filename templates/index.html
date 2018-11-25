@@ -6,8 +6,8 @@
 
   <!-- Scripts -->
   <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
-  <script src="../required/Build/Cesium/Cesium.js"></script>
-  <script src="../required/dist/aframe-aterrain-component.js"></script>
+  <script src="/static/required/Build/Cesium/Cesium.js"></script>
+  <script src="/static/required/dist/aframe-aterrain-component.js"></script>
   <script src="https://fernandojsg.github.io/aframe-camera-transform-controls-component/dist/aframe-camera-transform-controls-component.min.js"></script>
   <!-- Dodgy CSS-->
   <style>
@@ -23,8 +23,8 @@
       </a-assets>-->
 
     <a-assets>
-      <a-asset-item id="plane" src="../models/Jet_01.gltf">
-      <img id="sky" src="../images/sky.jpg">
+      <a-asset-item id="plane" src="/static/models/Jet_01.gltf">
+      <img id="sky" src="/static/images/sky.jpg">
     </a-assets>
     
     <a-sky src="#sky"></a-sky>
@@ -33,22 +33,22 @@
     <a-entity a-terrain="fovpad:4;
                         latitude: -27.4582505;
                         longitude: 153.032591;
-                        lod: 14;
+                        lod: 16;
                         radius: 75000;
                         world_radius: 13727982;
                         stretch: 4;
                         elevation:1;
                       " id="world" position="0 0 0" visible="true">
 
-      <a-entity id="plane" a-location="latitude: -27.4582505; longitude: 153.032591; radius: 75000; world_radius: 13727982; elevation:0">
+      <a-entity id="plane" a-location="latitude: -27.4582505; longitude: 153.042591; radius: 75000; world_radius: 13727982; elevation:0">
         <a-entity rotation="-90 0 0">
-          <a-gltf-model src="#plane" position = "0 15 0" scale="0.1 0.1 0.1"></a-gltf-model>
+          <a-gltf-model id="plane-model" src="#plane" rotation="0 0 0" position = "0 15 0" scale="0.1 0.1 0.1"></a-gltf-model>
         </a-entity>
       </a-entity>
 
       <a-entity id="plane2" a-location="latitude: -27.4635607; longitude: 153.0355937; radius: 75000; world_radius: 13727982; elevation:0">
         <a-entity rotation="-90 0 0">
-          <a-gltf-model src="#plane" position = "0 15 0" scale="0.1 0.1 0.1"></a-gltf-model>
+          <a-gltf-model id="plane2-model" src="#plane" rotation="0 0 0" position = "0 15 0" scale="0.1 0.1 0.1"></a-gltf-model>
         </a-entity>
       </a-entity>
        
@@ -62,9 +62,9 @@
         <a-entity id="camera" camera wasd-controls="fly:true" look-controls orbit-controls>
             <a-box opacity="0" color="blue" width="2" height="0.5" depth="0.001" position="0 0 -0.75" text="" material="" geometry="">
               <a-entity position="0 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0" text="color: white; align: center; value: _._; width: 2"></a-entity>
-              <a-entity position="0 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [FUEL: 100L]; width: 1"></a-entity>
-              <a-entity position="-1 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [VEL: 60m/s]; width: 1"></a-entity>
-              <a-entity position="1 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ALT: 10KM]; width: 1"></a-entity>
+              <a-entity id="fuel" position="0 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [FUEL: 100L]; width: 1"></a-entity>
+              <a-entity id="airspeed" position="-0.5 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
+              <a-entity id="altitude" position="0.5 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ALT: 10KM]; width: 1"></a-entity>
             </a-box>
         </a-entity>
         <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left"></a-entity>
