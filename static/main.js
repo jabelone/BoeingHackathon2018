@@ -33,8 +33,7 @@ function updateUI() {
                     let entity_string = "<a-entity id=\"plane" + x + "\" a-location=\"" + location_string + "\"> <a-entity rotation=\"-90 0 0\"> <a-gltf-model id=\"plane-model\" src=\"#plane\" rotation=\"0 0 0\" position=\"0 15 0\" scale=\"0.1 0.1 0.1\"></a-gltf-model> </a-entity> </a-entity>";
 
                     // document.getElementById("plane" + x).outerHTML = "";
-
-                    document.getElementById("world").innerHTML += entity_string;
+                    // document.getElementById("world").innerHTML += entity_string;
                     console.log("updated planes");
                 }
             }
