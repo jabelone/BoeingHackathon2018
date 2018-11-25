@@ -59,26 +59,24 @@
     
     <!--<a-plane src="#ground" height="5" width="5" rotation="-90 0 0" position="0 -5 0"></a-plane>-->
     <!--- Setup Camera and Controls-->
-    <a-entity id="cameraRig" position="0 16 0">
+    <a-entity id="cameraRig" position="0 1.7 0" scale="15 15 15">
         <a-entity id="camera" camera wasd-controls="fly:true" look-controls orbit-controls>
             <a-box opacity="0" color="blue" width="2" height="0.5" depth="0.001" position="0 0 -0.75" text="" material="" geometry="">
-              <a-entity position="0 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0" text="color: white; align: center; value: _._; width: 2"></a-entity>
-              <a-entity id="fuel" position="0 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [FUEL: 100L]; width: 1"></a-entity>
-              <a-entity id="altitude" position="0.5 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ALT: 10KM]; width: 1"></a-entity>
+              <a-entity position="0 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0" text="color: white; align: center; value: ; width: 2"></a-entity>
+              <a-entity id="fuel" position="0 0.45 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [FUEL: 100L]; width: 1"></a-entity>
             </a-box>
         </a-entity>
-<<<<<<< HEAD
-        <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left">
-          <a-entity rotation="-90 0 0">
-            <a-entity id="airspeed" position="0 0 -0.25" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
-          </a-entity>
-=======
         <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera; button: trigger">
-          <a-entity id="airspeed" position="0.25 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
->>>>>>> 1c2ca3755e6faa653f2fa099bfe2355a0b148747
+          <a-entity rotation="-90 0 0">
+            <a-entity id="airspeed" position="0 0.15 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
+          </a-entity>
         </a-entity>
-        <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right" oculus-touch-controls="hand: right" windows-motion-controls="hand: right"></a-entity>
-    </a-entity>
+        <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right" oculus-touch-controls="hand: right" windows-motion-controls="hand: right">
+          <a-entity rotation="-90 0 0">
+            <a-entity id="altitude" position="0 0.15 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ALT: 10KM]; width: 1"></a-entity>
+          </a-entity>
+        </a-entity>
+    </a-entity>`
 
     <!--- Lighting -->
     <a-light type="directional" color="#ffffff" intensity="1" position="-1 1 1"></a-light>
