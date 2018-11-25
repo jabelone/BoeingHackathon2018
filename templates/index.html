@@ -33,7 +33,7 @@
     <a-entity a-terrain="fovpad:4;
                         latitude: -27.4582505;
                         longitude: 153.032591;
-                        lod: 16;
+                        lod: 14;
                         radius: 75000;
                         world_radius: 13727982;
                         stretch: 4;
@@ -63,11 +63,12 @@
             <a-box opacity="0" color="blue" width="2" height="0.5" depth="0.001" position="0 0 -0.75" text="" material="" geometry="">
               <a-entity position="0 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0" text="color: white; align: center; value: _._; width: 2"></a-entity>
               <a-entity id="fuel" position="0 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [FUEL: 100L]; width: 1"></a-entity>
-              <a-entity id="airspeed" position="-0.5 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
               <a-entity id="altitude" position="0.5 0.5 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ALT: 10KM]; width: 1"></a-entity>
             </a-box>
         </a-entity>
-        <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left"></a-entity>
+        <a-entity id="lefthand" camera-transform-controls-hand="hand:left" vive-controls="hand: left" oculus-touch-controls="hand: left" windows-motion-controls="hand: left">
+          <a-entity id="airspeed" position="0.25 0 0" geometry="primitive: plane; width: 0.35; height: 0.05" material="opacity: 0.6; color: #000000" text="color: white; align: center; value: [ASPD: 60m/s]; width: 1"></a-entity>
+        </a-entity>
         <a-entity id="righthand" camera-transform-controls-hand="hand:right" vive-controls="hand: right" oculus-touch-controls="hand: right" windows-motion-controls="hand: right"></a-entity>
     </a-entity>
   
