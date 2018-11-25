@@ -7,6 +7,7 @@ locations_file = "PlatformLocations.csv"
 time = 0
 aircraft_locations = dict()
 aircraft_num = 8
+max_time = 304
 
 with open(locations_file, newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -29,11 +30,12 @@ def locations():
     global time
     aircraft_pos = dict()
 
+    if time > max_time:
+        time = 0
+
     for aircraft in range(aircraft_num):
         aircraft += 1
         aircraft_pos[aircraft] = aircraft_locations[str(time) + "-" + str(aircraft)]
         time += 1
-
-    if time 
 
     return jsonify(aircraft_pos)
